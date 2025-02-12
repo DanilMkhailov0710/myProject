@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "field": "agreementDateFrom",
+      "message": "The Date must be to future"
+    },
+    {
+      "field": "agreementDateTo",
+      "message": "The Date must be to future"
+    }
+  ],
+  "personFirstName": null,
+  "personLastName": null,
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "agreementPrice": null
+}
