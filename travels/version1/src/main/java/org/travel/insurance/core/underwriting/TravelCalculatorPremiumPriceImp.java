@@ -2,10 +2,10 @@ package org.travel.insurance.core.underwriting;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-
-import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.travel.insurance.dto.Risk;
 import org.springframework.stereotype.Component;
+
+import org.travel.insurance.dto.Risk;
+import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 
 import java.math.BigDecimal;
 
@@ -25,4 +25,5 @@ class TravelCalculatorPremiumPriceImp implements TravelPremiumUnderwriting{
 
         return new TravelStoragePremiumSelectedRisks(risks, totalPrice);
     }
+
 }

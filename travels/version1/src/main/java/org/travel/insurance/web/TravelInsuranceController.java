@@ -1,17 +1,20 @@
 package org.travel.insurance.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import org.springframework.ui.ModelMap;
+
 import org.travel.insurance.core.service.TravelCalculatePremiumService;
+
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumResponseV1;
 
 @Controller
-public class TravelInsuranceController {
+public class
+TravelInsuranceController {
 
     private final TravelCalculatePremiumService service;
 

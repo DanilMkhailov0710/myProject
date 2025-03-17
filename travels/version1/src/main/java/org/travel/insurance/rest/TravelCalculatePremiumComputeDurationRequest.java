@@ -1,11 +1,11 @@
 package org.travel.insurance.rest;
 
-import com.google.common.base.Stopwatch;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
+import com.google.common.base.Stopwatch;
 
 @Component
 class TravelCalculatePremiumComputeDurationRequest {
@@ -16,4 +16,5 @@ class TravelCalculatePremiumComputeDurationRequest {
         long time = stopwatch.elapsed(TimeUnit.MILLISECONDS);
         loggerRequest.info("Time executing: {} milliseconds", time);
     }
+
 }

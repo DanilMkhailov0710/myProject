@@ -1,8 +1,9 @@
 package org.travel.insurance.core.util;
 
 import lombok.RequiredArgsConstructor;
-import org.travel.insurance.dto.ValidationError;
 import org.springframework.stereotype.Component;
+
+import org.travel.insurance.dto.ValidationError;
 
 import java.util.List;
 

@@ -1,10 +1,11 @@
 package org.travel.insurance.core.underwriting.calculators.medical;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
 import org.travel.insurance.core.domain.CountryDefaultDayRate;
 import org.travel.insurance.core.repositories.CountryDefaultDayRateRepository;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
@@ -23,4 +24,5 @@ class CalculatorDefaultDayPremium {
                 .map(CountryDefaultDayRate::getDefaultDayRate)
                 .orElse(BigDecimal.ZERO);
     }
+
 }

@@ -1,9 +1,9 @@
 package org.travel.insurance.core.api.command;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 import org.travel.insurance.core.api.dto.AgreementDTO;
 

@@ -1,12 +1,12 @@
 package org.travel.insurance.core.api.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-import java.util.Date;
 import java.util.List;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -18,7 +18,9 @@ public class PersonDTO {
 
     private String personLastName;
 
-    private Date personBirthDate;
+    private LocalDate personBirthDate;
+
+    private String medicalRiskLimitLevel;
 
     private List<RiskDTO> risks;
 

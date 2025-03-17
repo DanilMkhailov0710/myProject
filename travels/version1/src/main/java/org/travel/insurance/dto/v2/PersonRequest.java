@@ -1,10 +1,10 @@
 package org.travel.insurance.dto.v2;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.time.LocalDate;
 

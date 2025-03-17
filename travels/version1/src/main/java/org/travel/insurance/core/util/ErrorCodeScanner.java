@@ -1,13 +1,14 @@
 package org.travel.insurance.core.util;
 
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.support.PropertiesLoaderUtils;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.support.PropertiesLoaderUtils;
+
 import java.util.List;
 import java.util.Properties;
+import java.io.IOException;
 
 @Component
 class ErrorCodeScanner {

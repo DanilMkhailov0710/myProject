@@ -1,24 +1,23 @@
 package org.travel.insurance.core.util;
 
-import org.travel.insurance.dto.ValidationError;
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.travel.insurance.dto.ValidationError;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
-
 @ExtendWith(MockitoExtension.class)
 class ValidationErrorFactoryTest {
-    @Mock
-    private ErrorCodeScanner errorCodeUtil;
 
-    @InjectMocks
-    private ValidationErrorFactory factory;
+    @Mock private ErrorCodeScanner errorCodeUtil;
+    @InjectMocks private ValidationErrorFactory factory;
 
     @Test
     public void checkFirstMethod() {
@@ -38,4 +37,5 @@ class ValidationErrorFactoryTest {
         assertEquals(error.errorCode(), "ERROR_CODE");
         assertEquals(error.description(), "error abrakadabra description");
     }
+
 }

@@ -1,0 +1,21 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_3",
+      "description": "Field agreementDateFrom must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_5",
+      "description": "Field agreementDateFrom must be in the future!"
+    },
+    {
+      "errorCode": "ERROR_CODE_7",
+      "description": "Field agreementDateFrom must be less than agreementDateTo!"
+    }
+  ],
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "country": null,
+  "agreementPremium": null,
+  "persons": null
+}

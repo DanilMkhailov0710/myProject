@@ -1,23 +1,25 @@
 package org.travel.insurance.core.service;
 
-import org.travel.insurance.core.underwriting.TravelPremiumUnderwriting;
-import org.travel.insurance.core.underwriting.TravelStoragePremiumSelectedRisks;
-import org.travel.insurance.core.validators.TravelCalculatePremiumRequestValidator;
-import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.travel.insurance.dto.ValidationError;
-
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDate;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.travel.insurance.core.underwriting.TravelPremiumUnderwriting;
+import org.travel.insurance.core.underwriting.TravelStoragePremiumSelectedRisks;
+
+import org.travel.insurance.core.validators.TravelCalculatePremiumRequestValidator;
+
+import org.travel.insurance.dto.ValidationError;
+import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
+
+import java.util.List;
+import java.time.LocalDate;
 
 @ExtendWith(MockitoExtension.class)
 class TravelCalculatePremiumServiceImplTest {

@@ -1,28 +1,30 @@
 package org.travel.insurance.core.validators.agreement;
 
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.travel.insurance.core.domain.ClassifierValue;
 import org.travel.insurance.core.repositories.ClassifierValueRepository;
 import org.travel.insurance.core.util.ValidationErrorFactory;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 import org.travel.insurance.dto.ValidationError;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
 @ExtendWith(MockitoExtension.class)
 class ValidatorCheckCorrectlySelectedRisksTasks {
+
     @Mock private ClassifierValueRepository repository;
     @Mock private ValidationErrorFactory errorFactory;
     @InjectMocks private ValidatorCheckCorrectlySelectedRisks validator;
@@ -31,14 +33,14 @@ class ValidatorCheckCorrectlySelectedRisksTasks {
     public void activateOneError(){
         var classifierValue = new ClassifierValue();
         var request = repeatBlock(Optional.of(classifierValue), Optional.empty());
-        iniErrorFactory();
+        settingsThrowError();
         assertEquals(1, validator.validate(request).size());
     }
 
     @Test
     public void activateEitherErrors(){
         var request = repeatBlock(Optional.empty(), Optional.empty());
-        iniErrorFactory();
+        settingsThrowError();
         assertEquals(2, validator.validate(request).size());
     }
 
@@ -60,9 +62,10 @@ class ValidatorCheckCorrectlySelectedRisksTasks {
         return request;
     }
 
-    private void iniErrorFactory(){
+    private void settingsThrowError(){
         ValidationError validationError = new ValidationError("ERROR_CODE", "Unknown error");
         when(errorFactory.buildValidationError(eq("ERROR_CODE_9"), anyList()))
                 .thenReturn(validationError);
     }
+
 }

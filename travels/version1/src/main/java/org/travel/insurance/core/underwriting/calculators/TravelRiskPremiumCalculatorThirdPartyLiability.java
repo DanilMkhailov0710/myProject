@@ -1,9 +1,10 @@
 package org.travel.insurance.core.underwriting.calculators;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
 import org.travel.insurance.core.underwriting.TravelRiskPremiumCalculator;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
@@ -20,4 +21,5 @@ class TravelRiskPremiumCalculatorThirdPartyLiability implements TravelRiskPremiu
     public String getRiskIc() {
         return "TRAVEL_THIRD_PARTY_LIABILITY";
     }
+
 }

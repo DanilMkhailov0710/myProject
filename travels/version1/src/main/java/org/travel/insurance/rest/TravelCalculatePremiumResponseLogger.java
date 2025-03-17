@@ -1,13 +1,15 @@
 package org.travel.insurance.rest;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
+import org.springframework.stereotype.Component;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
-import org.travel.insurance.dto.v1.TravelCalculatePremiumResponseV1;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+
+import org.travel.insurance.dto.v1.TravelCalculatePremiumResponseV1;
 
 @Component
 class TravelCalculatePremiumResponseLogger {
@@ -25,4 +27,5 @@ class TravelCalculatePremiumResponseLogger {
             loggerRequest.error("JsonProcessingException was caught", e);
         }
     }
+
 }

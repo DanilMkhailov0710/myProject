@@ -1,10 +1,10 @@
 package org.travel.insurance.core.underwriting;
 
 import lombok.RequiredArgsConstructor;
-
-import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.travel.insurance.dto.Risk;
 import org.springframework.stereotype.Component;
+
+import org.travel.insurance.dto.Risk;
+import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 
 import java.util.List;
 
@@ -24,4 +24,5 @@ class SelectedRisksPremiumCalculator {
                 .map(risk -> new Risk(risk.getRiskIc(), risk.calculatePremium(request)))
                 .toList();
     }
+
 }

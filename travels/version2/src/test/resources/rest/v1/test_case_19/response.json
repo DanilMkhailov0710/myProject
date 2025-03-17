@@ -1,0 +1,61 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_13",
+      "description": "personBirthDate must not be after current date! "
+    },
+    {
+      "errorCode": "ERROR_CODE_3",
+      "description": "Field agreementDateFrom must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_4",
+      "description": "Field agreementDateTo must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_12",
+      "description": "Field personBirthDate must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_10",
+      "description": "Country must be not null!"
+    },
+    {
+      "errorCode": "ERROR_CODE_5",
+      "description": "Field agreementDateFrom must be in the future!"
+    },
+    {
+      "errorCode": "ERROR_CODE_7",
+      "description": "Field agreementDateFrom must be less than agreementDateTo!"
+    },
+    {
+      "errorCode": "ERROR_CODE_6",
+      "description": "Field agreementDateTo must be in the future!"
+    },
+    {
+      "errorCode": "ERROR_CODE_14",
+      "description": "medicalRiskLimitLevel must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_15",
+      "description": "Medical risk limit level ic = NULL not supported!"
+    },
+    {
+      "errorCode": "ERROR_CODE_1",
+      "description": "Field personFirstName must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_2",
+      "description": "Field personLastName must not be empty!"
+    }
+  ],
+  "personFirstName": null,
+  "personLastName": null,
+  "personBirthDate": null,
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "country": null,
+  "medicalRiskLimitLevel": null,
+  "agreementPremium": null,
+  "risks": null
+}

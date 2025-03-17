@@ -1,15 +1,15 @@
 package org.travel.insurance.core.validators.agreement;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
-import org.travel.insurance.core.repositories.ClassifierValueRepository;
 import org.travel.insurance.core.util.Placeholder;
 import org.travel.insurance.core.util.ValidationErrorFactory;
 import org.travel.insurance.core.validators.ValidatorThrowableManyErrors;
-import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.travel.insurance.dto.ValidationError;
+import org.travel.insurance.core.repositories.ClassifierValueRepository;
 
-import org.springframework.stereotype.Component;
+import org.travel.insurance.dto.ValidationError;
+import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 
 import java.util.List;
 
@@ -42,4 +42,5 @@ class ValidatorCheckCorrectlySelectedRisks implements ValidatorThrowableManyErro
         Placeholder placeholder = new Placeholder("NOT_EXISTING_RISK_TYPE", risk);
         return errorFactory.buildValidationError("ERROR_CODE_9", List.of(placeholder));
     }
+
 }

@@ -3,19 +3,20 @@ package org.travel.insurance.rest;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.List;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
+import org.springframework.http.MediaType;
+import org.springframework.http.HttpHeaders;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import java.util.List;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
@@ -53,4 +54,5 @@ public class TravelCalculatePremiumControllerTest {
                 11, 12, 13, 14, 15,
                 16, 17, 18, 19, 20);
     }
+
 }

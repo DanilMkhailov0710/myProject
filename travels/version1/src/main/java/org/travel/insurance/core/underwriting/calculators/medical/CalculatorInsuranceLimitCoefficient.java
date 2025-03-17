@@ -1,11 +1,12 @@
 package org.travel.insurance.core.underwriting.calculators.medical;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
+
 import org.travel.insurance.core.domain.MedicalRiskLimitLevel;
 import org.travel.insurance.core.repositories.MedicalRiskLimitLevelRepository;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
@@ -29,4 +30,5 @@ public class CalculatorInsuranceLimitCoefficient {
                 .map(MedicalRiskLimitLevel::getCoefficient)
                 .orElse(BigDecimal.ONE);
     }
+
 }

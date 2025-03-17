@@ -2,16 +2,16 @@ package org.travel.insurance.core.validators.agreement;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import org.travel.insurance.core.util.ValidationErrorFactory;
 import org.travel.insurance.core.validators.ValidatorThrowableOneError;
-import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
+
 import org.travel.insurance.dto.ValidationError;
+import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 
-import org.springframework.stereotype.Component;
-
-import java.time.temporal.ChronoUnit;
 import java.util.Optional;
+import java.time.temporal.ChronoUnit;
 
 @Component
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
@@ -43,4 +43,5 @@ class ValidatorConstraintDatesFromAndTo implements ValidatorThrowableOneError {
                 )
                 .or(() -> coreConditionConstraint(request));
     }
+
 }

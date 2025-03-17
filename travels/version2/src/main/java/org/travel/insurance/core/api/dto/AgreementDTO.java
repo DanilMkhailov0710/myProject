@@ -1,13 +1,13 @@
 package org.travel.insurance.core.api.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
+import java.time.LocalDate;
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -15,13 +15,11 @@ import java.util.List;
 @AllArgsConstructor
 public class AgreementDTO {
 
-    private Date agreementDateFrom;
+    private LocalDate agreementDateFrom;
 
-    private Date agreementDateTo;
+    private LocalDate agreementDateTo;
 
     private String country;
-
-    private String medicalRiskLimitLevel;
 
     private List<String> selectedRisks;
 

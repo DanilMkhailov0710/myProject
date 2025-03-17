@@ -1,9 +1,9 @@
 package org.travel.insurance.core.repositories;
 
-import org.travel.insurance.core.domain.ClassifierValue;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.travel.insurance.core.domain.ClassifierValue;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 

@@ -1,18 +1,20 @@
 package org.travel.insurance.core.repositories;
 
-import org.travel.insurance.core.domain.Classifier;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.travel.insurance.core.domain.Classifier;
+
+import java.util.Optional;
 
 
 @ExtendWith(SpringExtension.class)

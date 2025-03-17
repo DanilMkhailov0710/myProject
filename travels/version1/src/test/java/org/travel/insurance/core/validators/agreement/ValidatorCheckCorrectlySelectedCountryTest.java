@@ -1,26 +1,27 @@
 package org.travel.insurance.core.validators.agreement;
 
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.mockito.Mockito.when;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.anyList;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.travel.insurance.core.domain.ClassifierValue;
 import org.travel.insurance.core.repositories.ClassifierValueRepository;
 import org.travel.insurance.core.util.ValidationErrorFactory;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 import org.travel.insurance.dto.ValidationError;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.ArgumentMatchers.anyList;
-import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.when;
-
-
 @ExtendWith(MockitoExtension.class)
 class ValidatorCheckCorrectlySelectedCountryTest {
+
     @Mock private ClassifierValueRepository repository;
     @Mock private ValidationErrorFactory errorFactory;
     @InjectMocks private ValidatorCheckCorrectlySelectedCountry validator;
@@ -35,7 +36,7 @@ class ValidatorCheckCorrectlySelectedCountryTest {
     public void first(){
         var request = new TravelCalculatePremiumRequestV1();
         request.setCountry("Grara");
-        iniErrorFactory();
+        settingsThrowError();
         assertTrue(validator.validate(request).isPresent());
     }
 
@@ -47,9 +48,10 @@ class ValidatorCheckCorrectlySelectedCountryTest {
         assertTrue(validator.validate(request).isEmpty());
     }
 
-    private void iniErrorFactory(){
+    private void settingsThrowError(){
         ValidationError validationError = new ValidationError("ERROR_CODE", "Unknown error");
         when(errorFactory.buildValidationError(eq("ERROR_CODE_11"), anyList()))
                 .thenReturn(validationError);
     }
+
 }

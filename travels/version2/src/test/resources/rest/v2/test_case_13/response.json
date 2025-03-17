@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_13",
+      "description": "personBirthDate must not be after current date! "
+    },
+    {
+      "errorCode": "ERROR_CODE_13",
+      "description": "personBirthDate must not be after current date! "
+    }
+  ],
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "country": null,
+  "agreementPremium": null,
+  "persons": null
+}

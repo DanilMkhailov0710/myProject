@@ -2,8 +2,8 @@ package org.travel.insurance.core.underwriting;
 
 import org.travel.insurance.dto.Risk;
 
-import java.math.BigDecimal;
 import java.util.List;
+import java.math.BigDecimal;
 
 public record TravelStoragePremiumSelectedRisks(
         List<Risk> risks,

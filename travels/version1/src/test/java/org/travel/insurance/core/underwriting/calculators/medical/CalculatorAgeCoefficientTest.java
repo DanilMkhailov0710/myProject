@@ -1,24 +1,27 @@
 package org.travel.insurance.core.underwriting.calculators.medical;
 
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import org.springframework.test.util.ReflectionTestUtils;
+
+import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.travel.insurance.core.domain.AgeCoefficient;
 import org.travel.insurance.core.repositories.AgeCoefficientRepository;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.util.ReflectionTestUtils;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.when;
+import java.time.LocalDate;
+import java.math.BigDecimal;
 
 @ExtendWith(MockitoExtension.class)
 class CalculatorAgeCoefficientTest {
+
     @Mock private AgeCoefficientRepository repositoryAge;
     @InjectMocks private CalculatorAgeCoefficient calculator;
 

@@ -2,15 +2,15 @@ package org.travel.insurance.core.validators;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
-
-import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.travel.insurance.dto.ValidationError;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
+import org.travel.insurance.dto.ValidationError;
+import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
+import java.util.Collection;
 
 @Component
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)

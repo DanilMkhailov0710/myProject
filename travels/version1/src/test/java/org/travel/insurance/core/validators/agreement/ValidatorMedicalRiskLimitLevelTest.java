@@ -1,17 +1,19 @@
 package org.travel.insurance.core.validators.agreement;
 
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import org.springframework.test.util.ReflectionTestUtils;
+
+import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.travel.insurance.core.util.ValidationErrorFactory;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 import org.travel.insurance.dto.ValidationError;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.util.ReflectionTestUtils;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class ValidatorMedicalRiskLimitLevelTest {
@@ -23,7 +25,7 @@ class ValidatorMedicalRiskLimitLevelTest {
     public void failByNull(){
         var request = new TravelCalculatePremiumRequestV1();
         setEnabledTrue();
-        setBuilderErrors();
+        settingsThrowError();
         var errors = validator.validate(request);
         assertTrue(errors.isPresent());
     }
@@ -33,7 +35,7 @@ class ValidatorMedicalRiskLimitLevelTest {
         var request = new TravelCalculatePremiumRequestV1();
         request.setMedicalRiskLimitLevel("");
         setEnabledTrue();
-        setBuilderErrors();
+        settingsThrowError();
         var errors = validator.validate(request);
         assertTrue(errors.isPresent());
     }
@@ -63,10 +65,9 @@ class ValidatorMedicalRiskLimitLevelTest {
         ReflectionTestUtils.setField(validator, "medicalRiskLimitLevelEnabled", false);
     }
 
-    private void setBuilderErrors(){
+    private void settingsThrowError(){
         var error = new ValidationError("ERROR_CODE_14", "FAIL");
         when(builderErrors.buildValidationError("ERROR_CODE_14")).thenReturn(error);
     }
-
 
 }

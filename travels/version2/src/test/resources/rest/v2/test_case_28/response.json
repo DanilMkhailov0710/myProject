@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_14",
+      "description": "medicalRiskLimitLevel must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_15",
+      "description": "Medical risk limit level ic = NULL not supported!"
+    },
+    {
+      "errorCode": "ERROR_CODE_14",
+      "description": "medicalRiskLimitLevel must not be empty!"
+    },
+    {
+      "errorCode": "ERROR_CODE_15",
+      "description": "Medical risk limit level ic = NULL not supported!"
+    }
+  ],
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "country": null,
+  "agreementPremium": null,
+  "persons": null
+}

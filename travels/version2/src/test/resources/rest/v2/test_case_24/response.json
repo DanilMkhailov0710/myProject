@@ -1,0 +1,17 @@
+{
+  "errors": [
+    {
+      "errorCode": "ERROR_CODE_11",
+      "description": "Country Type ic =  not supported!"
+    },
+    {
+      "errorCode": "ERROR_CODE_10",
+      "description": "Country must be not null!"
+    }
+  ],
+  "agreementDateFrom": null,
+  "agreementDateTo": null,
+  "country": null,
+  "agreementPremium": null,
+  "persons": null
+}

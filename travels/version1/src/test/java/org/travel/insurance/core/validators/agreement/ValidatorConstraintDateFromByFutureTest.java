@@ -1,16 +1,17 @@
 package org.travel.insurance.core.validators.agreement;
 
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.travel.insurance.core.util.ValidationErrorFactory;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 import org.travel.insurance.dto.ValidationError;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.mockito.Mockito.when;
 
 import java.time.LocalDate;
 
@@ -20,17 +21,12 @@ class ValidatorConstraintDateFromByFutureTest {
     @Mock private ValidationErrorFactory builderErrors;
     @InjectMocks private ValidatorConstraintDateFromByFuture validator;
 
-    private void repeatIniMock(){
-        when(builderErrors.buildValidationError("ERROR_CODE_5"))
-                .thenReturn(new ValidationError("ERROR_CODE_5", "description5"));
-    }
-
     @Test
     public void testNull(){
         var request = new TravelCalculatePremiumRequestV1();
-        repeatIniMock();
+        settingsThrowError();
         var result = validator.validate(request);
-        assertFalse(result.isEmpty());
+        assertTrue(result.isPresent());
     }
 
     @Test
@@ -38,9 +34,9 @@ class ValidatorConstraintDateFromByFutureTest {
         var request = new TravelCalculatePremiumRequestV1();
         LocalDate now = LocalDate.now();
         request.setAgreementDateFrom(LocalDate.of(now.getYear()-1, now.getMonthValue(), now.getDayOfMonth()));
-        repeatIniMock();
+        settingsThrowError();
         var result = validator.validate(request);
-        assertFalse(result.isEmpty());
+        assertTrue(result.isPresent());
     }
 
     @Test
@@ -59,4 +55,10 @@ class ValidatorConstraintDateFromByFutureTest {
         var result = validator.validate(request);
         assertTrue(result.isEmpty());
     }
+
+    private void settingsThrowError(){
+        when(builderErrors.buildValidationError("ERROR_CODE_5"))
+                .thenReturn(new ValidationError("ERROR_CODE_5", "description5"));
+    }
+
 }

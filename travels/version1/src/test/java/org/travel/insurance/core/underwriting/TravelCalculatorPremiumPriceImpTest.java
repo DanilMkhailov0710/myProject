@@ -1,18 +1,19 @@
 package org.travel.insurance.core.underwriting;
 
-import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
-import org.travel.insurance.dto.Risk;
+import org.mockito.Mock;
+import org.mockito.InjectMocks;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.math.BigDecimal;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
+import org.travel.insurance.dto.Risk;
+
+import java.util.List;
+import java.math.BigDecimal;
 
 @ExtendWith(MockitoExtension.class)
 class TravelCalculatorPremiumPriceImpTest {

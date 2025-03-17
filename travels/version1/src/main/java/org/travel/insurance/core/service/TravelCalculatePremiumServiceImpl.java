@@ -2,12 +2,13 @@ package org.travel.insurance.core.service;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import org.travel.insurance.core.underwriting.TravelPremiumUnderwriting;
 import org.travel.insurance.core.validators.TravelCalculatePremiumRequestValidator;
+
 import org.travel.insurance.dto.v1.TravelCalculatePremiumRequestV1;
 import org.travel.insurance.dto.v1.TravelCalculatePremiumResponseV1;
-import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
